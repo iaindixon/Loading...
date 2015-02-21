@@ -27,6 +27,10 @@ public class MainActivity extends Activity {
             Paint paint = new Paint();
             paint.setColor(Color.BLACK);
             canvas.drawPaint(paint);
+            paint.setColor(Color.LTGRAY);
+            canvas.drawRect(0, 0, canvas.getWidth(), getHeight()/20, paint);
+            paint.setColor(Color.GREEN);
+            canvas.drawRect(0, 0, canvas.getWidth()/3, getHeight()/20, paint);
         }
     }
 }
