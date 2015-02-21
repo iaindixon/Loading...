@@ -1,4 +1,4 @@
-/**
+package com.example.rarora9.loading; /**
  * Created by iain on 2/20/15.
  */
 import android.graphics.Color;
