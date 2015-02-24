@@ -5,8 +5,6 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Point;
 import android.os.Bundle;
 import android.view.View;
 import java.util.Timer;
@@ -61,7 +59,7 @@ public class MainActivity extends Activity {
             canvas.drawRect(0, 0, loadWidth, height/20, paint);
             paint.setColor(Color.WHITE);
             canvas.drawCircle(width/2, height/2, width/20, paint);
-            
+
             if(won) {
                 paint.setTextSize(100);
                 paint.setTextAlign(Paint.Align.CENTER);
