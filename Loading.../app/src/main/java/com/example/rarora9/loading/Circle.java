@@ -16,9 +16,9 @@ public class Circle {
     }
 
     public Circle(){
-        xCoord = 0;
-        yCoord = 0;
-        radius = 0;
+        xCoord = 100;
+        yCoord = 100;
+        radius = 50;
         paint.setColor(BLUE);
     }
 
@@ -29,18 +29,16 @@ public class Circle {
         paint = pai;
     }
 
+    //Getter Methods
     public int getXCoord(){
         return xCoord;
     }
-
     public int getyCoord(){
         return yCoord;
     }
-
     public int getRadius(){
         return radius;
     }
-
     public Paint getPaint(){
         return paint;
     }
