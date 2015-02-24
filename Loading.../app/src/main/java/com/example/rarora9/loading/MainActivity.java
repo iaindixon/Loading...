@@ -60,6 +60,37 @@ public class MainActivity extends Activity {
             paint.setColor(Color.WHITE);
             canvas.drawCircle(width/2, height/2, width/20, paint);
 
+            super.draw(canvas, mapView, true);
+
+            Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+            paint.setStrokeWidth(2);
+            paint.setColor(android.graphics.Color.RED);
+            paint.setStyle(Paint.Style.FILL_AND_STROKE);
+            paint.setAntiAlias(true);
+
+            Point point1_draw = new Point();
+            Point point2_draw = new Point();
+            Point point3_draw = new Point();
+
+            mapView.getProjection().toPixels(point1, point1_draw);
+            mapView.getProjection().toPixels(point2, point2_draw);
+            mapView.getProjection().toPixels(point3, point3_draw);
+
+            Path path = new Path();
+            path.setFillType(Path.FillType.EVEN_ODD);
+            path.moveTo(point1_draw.x,point1_draw.y);
+            path.lineTo(point2_draw.x,point2_draw.y);
+            path.lineTo(point3_draw.x,point3_draw.y);
+            path.lineTo(point1_draw.x,point1_draw.y);
+            path.close();
+
+            canvas.drawPath(path, paint);
+
+//canvas.drawLine(point1_draw.x,point1_draw.y,point2_draw.x,point2_draw.y, paint);
+
+            return true;
+
             if(won) {
                 paint.setTextSize(100);
                 paint.setTextAlign(Paint.Align.CENTER);
