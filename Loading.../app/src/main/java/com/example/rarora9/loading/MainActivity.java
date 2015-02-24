@@ -60,6 +60,7 @@ public class MainActivity extends Activity {
             paint.setColor(Color.WHITE);
             canvas.drawCircle(width/2, height/2, width/20, paint);
 
+
             if(won) {
                 paint.setTextSize(100);
                 paint.setTextAlign(Paint.Align.CENTER);
