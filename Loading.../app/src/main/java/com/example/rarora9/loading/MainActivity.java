@@ -12,7 +12,7 @@ import java.util.TimerTask;
 
 public class MainActivity extends Activity {
 
-    int width, height;
+    static int width, height;
     int loadWidth = 0, numMilliseconds = 0;
     boolean won = false;
 
