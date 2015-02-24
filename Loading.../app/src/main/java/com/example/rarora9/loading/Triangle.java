@@ -3,6 +3,7 @@ package com.example.rarora9.loading;
 /**
  * Created by iain on 2/24/15.
  */
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 
@@ -21,15 +22,28 @@ public class Triangle {
 
     }
 
+    //Default Constructor
     public Triangle(){
         paint.setColor(RED);
     }
 
-    public Triangle(Paint pai){
-        paint = pai;
+//    public Triangle(Color col) {paint.setColor(Color.col);}
+
+    //Setter Methods
+    public void setTriangle(Paint pai){
+        this.paint = pai;
+    }
+    public void setOne(Point one) {
+        this.one = one;
+    }
+    public void setTwo(Point two) {
+        this.two = two;
+    }
+    public void setThree(Point three) {
+        this.three = three;
     }
 
-    //
+    //Getter Methods
     public Paint getPaint(){
         return paint;
     }
@@ -41,23 +55,5 @@ public class Triangle {
     }
     public Point getThree() {
         return three;
-    }
-
-
-
-    public void setThree(Point three) {
-        this.three = three;
-    }
-
-
-
-    public void setTwo(Point two) {
-        this.two = two;
-    }
-
-
-
-    public void setOne(Point one) {
-        this.one = one;
     }
 }
