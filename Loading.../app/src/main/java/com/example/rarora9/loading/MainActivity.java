@@ -15,6 +15,8 @@ public class MainActivity extends Activity {
     static int width, height;
     int loadWidth = 0, numMilliseconds = 0;
     boolean won = false;
+    boolean enemiesSetUp = false;
+    Square[] squares = new Square[25];
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,13 +55,24 @@ public class MainActivity extends Activity {
             Paint paint = new Paint();
             paint.setColor(Color.BLACK);
             canvas.drawPaint(paint);
+
+            if(!enemiesSetUp) {
+                for(int i = 0; i < 25; i++) {
+                    squares[i] = new Square();
+                }
+                enemiesSetUp = true;
+            } else {
+                for(int i = 0; i < 25; i++) {
+                    canvas.drawRect(squares[i].getLeft() + numMilliseconds/10, squares[i].getTop() + numMilliseconds/10, squares[i].getRight() + numMilliseconds/10, squares[i].getBottom() + numMilliseconds/10, squares[i].getPaint());
+                }
+            }
+
             paint.setColor(Color.LTGRAY);
             canvas.drawRect(0, 0, width, height/20, paint);
             paint.setColor(Color.GREEN);
             canvas.drawRect(0, 0, loadWidth, height/20, paint);
             paint.setColor(Color.WHITE);
             canvas.drawCircle(width/2, height/2, width/20, paint);
-
 
             if(won) {
                 paint.setTextSize(100);

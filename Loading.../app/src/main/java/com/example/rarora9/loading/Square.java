@@ -14,27 +14,28 @@ public class Square {
     private int top;
     private int right;
     private int bottom;
-    private Paint paint;
+    private Paint paint = new Paint();
     private Random random = new Random();
 
     public Square() {
         int spawnSide = random.nextInt(4);
 
-        if(spawnSide == 0) {
-
-        } else if(spawnSide == 1) {
-
-        } else if(spawnSide == 2) {
-
-        } else if (spawnSide == 3) {
-
+        if(spawnSide == 0) { //spawn on left
+            left = -100;
+            top = random.nextInt(MainActivity.height - 99);
+        } else if(spawnSide == 1) { //spawn on top
+            left = random.nextInt(MainActivity.width + 101) - 100;
+            top = -100;
+        } else if(spawnSide == 2) { //spawn on right
+            left = MainActivity.width;
+            top = random.nextInt(MainActivity.height - 99);
+        } else if (spawnSide == 3) { //spawn on bottom
+            left = random.nextInt(MainActivity.width + 101) - 100;
+            top = MainActivity.height;
         }
-        
-        left = 0;
-        top = 0;
-        right = 10;
-        bottom = 10;
-        paint = new Paint();
+
+        right = left + 100;
+        bottom = top + 100;
         paint.setColor(Color.GREEN);
     }
 
